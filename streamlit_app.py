@@ -1,6 +1,8 @@
 import streamlit as st
+import leafmap.foliumap as lm
 
-st.title("🎈 My new app")
-st.write(
-    "Let's start building! For help and inspiration, head over to [docs.streamlit.io](https://docs.streamlit.io/)."
-)
+m =  lm.Map
+
+m = lm.Map(minimap_control=True)
+m.add_basemap("OpenTopoMap")
+m.to_streamlit(height=500)
