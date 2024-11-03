@@ -15,7 +15,7 @@ coords = [(125.124938, 6.064593), (125.128228, 6.068362)]
 # Request the route from OpenRouteService
 route = client.directions(
     coordinates=coords, 
-    profile='foot-hiking', 
+    profile='driving-car', 
     format='geojson'
 )
 
