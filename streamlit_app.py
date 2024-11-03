@@ -15,7 +15,7 @@ coords = [(125.124938, 6.064593), (125.128223, 6.068402)]
 # Request the route from OpenRouteService
 route = client.directions(
     coordinates=coords, 
-    profile='cycling-regular', 
+    profile='foot-walking', 
     format='geojson'
     options={
             "avoid_features": ["steps", "fords"],  # Add features to avoid based on bad accessibility
