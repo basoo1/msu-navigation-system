@@ -18,8 +18,7 @@ end = (6.066119, 125.127561)     # Ending coordinates
 route_response = client.directions(
     profile='driving-car',  # Change this to 'cycling-regular', 'foot-walking', etc., as needed
     format='geojson',
-    start=start,
-    end=end
+    locations=[start, end]
 )
 
 # Extract coordinates from the route response
