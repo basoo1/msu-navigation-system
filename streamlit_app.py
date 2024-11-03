@@ -7,7 +7,7 @@ client = ors.Client(key='5b3ce3597851110001cf624837d88bbeea824684aebf5b99dd620f8
 
 m = lm.Map(center = [6.064593, 125.124938], zoom = 15)    
 
-coords = [((6.064593, 125.124938), (6.064732, 125.127561))]
+coords = [(6.064593, 125.124938), (6.064732, 125.127561)]
 
 route = client.directions(coordinates = coords, profile = 'driving car', format = 'geojson')
 
