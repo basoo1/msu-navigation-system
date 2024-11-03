@@ -16,10 +16,7 @@ folium.Marker(location=start, popup='Start Point').add_to(m)
 # Create a Marker for the end point
 folium.Marker(location=end, popup='End Point').add_to(m)
 
-# Draw a straight line (polyline) from start to end
-folium.PolyLine(locations=[start, end], color="blue", weight=5).add_to(m)
-
-# Add routing using Leaflet Routing Machine
+# Add routing using Leaflet Routing Machine based on roads
 routing_script = f"""
 <script>
 var control = L.Routing.control({{
@@ -29,7 +26,8 @@ var control = L.Routing.control({{
     ],
     routeWhileDragging: true,
     geocoder: L.Control.Geocoder.nominatim(),
-    createMarker: function() {{ return null; }}  // Prevent markers from being created
+    createMarker: function() {{ return null; }},  // Prevent markers from being created
+    router: L.Routing.mapbox('YOUR_MAPBOX_ACCESS_TOKEN')  // Use your Mapbox access token
 }}).addTo(map);
 </script>
 """
