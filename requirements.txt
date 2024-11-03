@@ -2,4 +2,3 @@ streamlit
 leafmap
 geopandas
 ipyleaflet
-ipywidget
