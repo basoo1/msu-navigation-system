@@ -1,7 +1,6 @@
 import streamlit as st
 import leafmap.foliumap as lm
 from ipyleaflet import Map, Marker, Polyline
-from ipywidgets import HTML
 
 # Create a new Leafmap instance
 m = lm.Map(minimap_control=True)
