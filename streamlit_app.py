@@ -4,7 +4,7 @@ import folium
 import openrouteservice
 
 # Initialize the OpenRouteService client
-ORS_API_KEY = 'YOUR_API_KEY'  # Replace with your OpenRouteService API key
+ORS_API_KEY = '5b3ce3597851110001cf624837d88bbeea824684aebf5b99dd620f83'  # Replace with your OpenRouteService API key
 client = openrouteservice.Client(key='5b3ce3597851110001cf624837d88bbeea824684aebf5b99dd620f83')
 
 # Create the map centered at MSU Gensan
