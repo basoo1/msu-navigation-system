@@ -5,7 +5,7 @@ import openrouteservice
 
 # Initialize the OpenRouteService client
 ORS_API_KEY = 'YOUR_API_KEY'  # Replace with your OpenRouteService API key
-client = openrouteservice.Client(key=5b3ce3597851110001cf624837d88bbeea824684aebf5b99dd620f83)
+client = openrouteservice.Client(key='5b3ce3597851110001cf624837d88bbeea824684aebf5b99dd620f83')
 
 # Create the map centered at MSU Gensan
 m = lm.Map(center=[6.064593, 125.124938], zoom=15)
