@@ -17,7 +17,7 @@ m.add_marker(start_marker)
 m.add_marker(end_marker)
 
 # Create a routing feature
-route = Polyline(locations=[start, end], color="blue", weight=5)
+route = lm.Polyline(locations=[start, end], color="blue", weight=5)
 m.add_layer(route)
 
 # Display the map in Streamlit
