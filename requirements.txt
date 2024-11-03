@@ -4,3 +4,4 @@ geopandas
 ipyleaflet
 folium
 streamlit-folium
+openrouteservice
