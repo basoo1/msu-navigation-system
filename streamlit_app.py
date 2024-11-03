@@ -11,7 +11,7 @@ coords = [(125.124938, 6.064593), (125.128223, 6.068402)]
 
 route = client.directions(
     coordinates=coords, 
-    profile='driving-car, 
+    profile='driving-car', 
     format='geojson'
 )
 
