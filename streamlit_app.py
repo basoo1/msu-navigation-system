@@ -17,6 +17,10 @@ route = client.directions(
     coordinates=coords, 
     profile='cycling-regular', 
     format='geojson'
+    options={
+            "avoid_features": ["steps", "fords"],  # Add features to avoid based on bad accessibility
+            "avoid_polygons": None  # You can also set polygons here if specific areas need avoiding
+        }
 )
 
 # Extract the route coordinates and create a PolyLine
