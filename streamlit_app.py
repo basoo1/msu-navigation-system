@@ -10,7 +10,7 @@ client = ors.Client(key='5b3ce3597851110001cf624837d88bbeea824684aebf5b99dd620f8
 m = lm.Map(center=[6.064593, 125.124938], zoom=15)
 
 # Define coordinates in (longitude, latitude) order
-coords = [(125.128223, 6.068402)(125.124938, 6.064593),]
+coords = [(125.124938, 6.064593), (125.128223, 6.068402)]
 
 # Request the route from OpenRouteService
 route = client.directions(
