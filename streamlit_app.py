@@ -9,7 +9,7 @@ m = lm.Map(center = [6.064593, 125.124938], zoom = 15)
 
 coords = [((6.064593, 125.124938), (6.064732, 125.127561))]
 
-route = client.directions(coordinates = coords)
+route = client.directions(coordinates = coords, profile = 'driving car')
 
 m.add_layer(route)
 
