@@ -1,7 +1,7 @@
 import streamlit as st
 import leafmap.foliumap as lm
 import folium
-import openrouteservices as ors
+import openrouteservice as ors
 
 client = ors.Client(key='5b3ce3597851110001cf624837d88bbeea824684aebf5b99dd620f83')
 
