@@ -16,6 +16,9 @@ folium.Marker(location=start, popup='Start Point').add_to(m)
 # Create a Marker for the end point
 folium.Marker(location=end, popup='End Point').add_to(m)
 
+# Draw a straight line (polyline) from start to end
+folium.PolyLine(locations=[start, end], color="blue", weight=5).add_to(m)
+
 # Add routing using Leaflet Routing Machine
 routing_script = f"""
 <script>
