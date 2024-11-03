@@ -1,7 +1,6 @@
 import streamlit as st
 import leafmap.foliumap as lm
 import folium
-from ipyleaflet import rout
 
 m = lm.Map(minimap_control=True)
 m.add_basemap("OpenTopoMap")
