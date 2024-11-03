@@ -5,7 +5,7 @@ import folium
 m = lm.Map(center = [6.064593, 125.124938], zoom = 15)    
 
 start = (6.064593, 125.124938)
-end = (6.064732, 125.127561)
+end = (6.066119, 125.127454)
 
 route = folium.PolyLine(locations=[start, end], color="blue", weight=5)
 
