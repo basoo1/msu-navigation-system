@@ -1,21 +1,15 @@
-# route
-import ipyleaflet
-from ipyleaflet import Map, Marker
+import streamlit as st
+import leafmap.foliumap as lm
+import folium
 
-# map
-map_plot_route = Map(center=[38, -98], zoom=4)
+m = lm.Map(minimap_control=True)
+m.add_basemap("OpenTopoMap")
 
-# route_locs = ['Los Angeles', 'Las Vegas', 'Denver', 'Chicago', 'Manhattan']
-# can use list of lists or list of tuples
-route_lats_longs = [[34.041008,-118.246653],
-                    [36.169726,-115.143996], 
-                    [39.739448,-104.992450], 
-                    [41.878765,-87.643267], 
-                    [40.782949,-73.969559]]
+start = (6.064593, 125.124938)
+end = (6.064732, 125.127561)
 
-# add route to map
-route = ipyleaflet.Polyline(locations=[route_lats_longs])
-map_plot_route.add_layer(route)
+route = folium.PolyLine(locations=[start, end], color="blue", weight=5)
 
-# display map
-map_plot_route
+route.add_to(m)
+
+m.to_streamlit(height=500)
