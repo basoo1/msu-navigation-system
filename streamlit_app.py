@@ -9,7 +9,7 @@ m = lm.Map(center = [6.064593, 125.124938], zoom = 15)
 
 coords = [(6.064593, 125.124938), (6.064732, 125.127561)]
 
-route = client.directions(coordinates = coords, profile = 'driving car', format = 'geojson')
+route = client.directions(coordinates = coords, profile = 'driving-car', format = 'geojson')
 
 folium.Polyline(locations=[list(cord) for coord in route['features'][0]['geometry']['coordinates']], color='blue').add_to(m)
 
