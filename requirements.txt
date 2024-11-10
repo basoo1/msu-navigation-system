@@ -1,7 +1,5 @@
 streamlit
 leafmap
-geopandas
-ipyleaflet
 folium
 streamlit-folium
 osmnx
