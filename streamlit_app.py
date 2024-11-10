@@ -1,20 +1,30 @@
+import streamlit as st
+import leafmap.foliumap as lm
+import folium
 import osmnx as ox
+import networkx as nx
 
-# Enable caching and logging
-ox.config(use_cache=True, log_console=True)
+# Create a map centered on MSU Gensan
+m = lm.Map(center=[6.064593, 125.124938], zoom=15)
 
-# Define the location (General Santos, Philippines)
-G = ox.graph_from_place('General Santos, Philippines', network_type='drive')
+# Define coordinates
+coords = [(125.124938, 6.064593), (125.128223, 6.068402)]
 
-# Use nearest nodes for origin and destination coordinates (General Santos example)
-orig = ox.get_nearest_node(G, (6.064593, 125.124938))  # Origin coordinates (replace as needed)
-dest = ox.get_nearest_node(G, (6.068402, 125.128223))  # Destination coordinates (replace as needed)
+# Download the street network from OpenStreetMap around the coordinates
+G = ox.graph_from_place('General Santos, Philippines', network_type='all')
 
-# Calculate the route based on travel time (if data is available)
-route2 = ox.shortest_path(G, orig, dest, weight='travel_time')
+# Convert coordinates to the nearest nodes in the graph
+orig_node = ox.distance.nearest_nodes(G, X=coords[0][0], Y=coords[0][1])
+dest_node = ox.distance.nearest_nodes(G, X=coords[1][0], Y=coords[1][1])
 
-# Plot the second route (route2) on the map
-route_map = ox.plot_route_folium(G, route2, route_color='#0000ff', opacity=0.5)
+# Get the route between the nodes
+route = nx.shortest_path(G, orig_node, dest_node, weight='length')
 
-# Save the map to an HTML file
-route_map.save('route.html')
+# Convert the route to coordinates
+route_coords = [(G.nodes[node]['y'], G.nodes[node]['x']) for node in route]
+
+# Plot the route on the map
+folium.PolyLine(locations=route_coords, color='blue', weight=5).add_to(m)
+
+# Display the map
+m.to_streamlit(height=500)
