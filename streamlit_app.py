@@ -2,7 +2,6 @@ import streamlit as st
 import leafmap.foliumap as lm
 import folium
 import osmnx as ox
-import networkx as nx
 
 m = lm.Map(center=[6.064593, 125.124938], zoom=15)
 
