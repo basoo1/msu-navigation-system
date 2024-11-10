@@ -2,6 +2,8 @@ import streamlit as st
 import folium as fm
 import osmnx as ox
 
+from streamlit_folium import st_folium
+
 m = fm.Map(center=[6.064593, 125.124938], zoom=15)
 
 coords = [(125.124938, 6.064593), (125.128223, 6.068402)]
@@ -17,4 +19,4 @@ route_coords = [(G.nodes[node]['y'], G.nodes[node]['x']) for node in route]
 fm.PolyLine(locations=route_coords, color='blue', weight=5).add_to(m)
 
 # Display the map
-m.to_streamlit(height=500)
+st_folium(m, height=500)
