@@ -5,3 +5,5 @@ ipyleaflet
 folium
 streamlit-folium
 openrouteservice
+osmx
+networkx
