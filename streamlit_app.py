@@ -4,7 +4,7 @@ import osmnx as ox
 
 from streamlit_folium import st_folium
 
-m = fm.Map(center=[6.064593, 125.124938], zoom=15)
+m = fm.Map(center=[6.064593, 125.124938], zoom_start=15)
 
 coords = [(125.124938, 6.064593), (125.128223, 6.068402)]
 
