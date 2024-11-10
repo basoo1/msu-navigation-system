@@ -4,7 +4,5 @@ geopandas
 ipyleaflet
 folium
 streamlit-folium
-openrouteservice
 osmnx
-networkx
 scikit-learn
