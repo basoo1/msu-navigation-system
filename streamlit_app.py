@@ -1,31 +1,30 @@
 import streamlit as st
 import leafmap.foliumap as lm
 import folium
-import networkx as nx
 import osmnx as ox
 
-# Create the map
-m = lm.Map(center=[6.064593, 125.124938], zoom=15)
+# Enable caching and logging
+ox.config(use_cache=True, log_console=True)
 
-# Define the coordinates for the route (start and end)
-coords = [(125.124938, 6.064593), (125.128223, 6.068402)]
+# Define the location (General Santos, Philippines)
+G = ox.graph_from_place('General Santos, Philippines', network_type='drive')
 
-# Download the street network for a specific area (e.g., a part of General Santos City)
-place_name = "General Santos, Philippines"  # Modify this as needed
-graph = ox.graph_from_place(place_name, network_type='all')
+# Sample route using specific nodes (replace with valid node IDs or use nearest nodes)
+# You may need to specify your own valid node IDs or use nearest nodes as shown below
+route1 = ox.shortest_path(G, 20461931, 75901933, weight=None)  # Replace with valid node IDs
 
-# Convert coordinates to nearest nodes on the graph
-start_node = ox.distance.nearest_nodes(graph, X=coords[0][0], Y=coords[0][1])
-end_node = ox.distance.nearest_nodes(graph, X=coords[1][0], Y=coords[1][1])
+# Use nearest nodes for origin and destination coordinates
+orig = ox.get_nearest_node(G, (6.064593, 125.124938))  # Replace with your origin coordinates
+dest = ox.get_nearest_node(G, (6.068402, 125.128223))  # Replace with your destination coordinates
 
-# Find the shortest path using Dijkstra's algorithm
-shortest_path = nx.shortest_path(graph, source=start_node, target=end_node, weight='length')
+# Calculate the route based on travel time (if data is available)
+route2 = ox.shortest_path(G, orig, dest, weight='travel_time')
 
-# Get coordinates for the route from the graph
-route_coords = [(graph.nodes[node]['x'], graph.nodes[node]['y']) for node in shortest_path]
+# Plot the first route (route1)
+route_map = ox.plot_route_folium(G, route1, route_color='#ff0000', opacity=0.5)
 
-# Add the route to the map
-folium.PolyLine(locations=route_coords, color='blue', weight=5).add_to(m)
+# Plot the second route (route2) on the same map
+route_map = ox.plot_route_folium(G, route2, route_map=route_map, route_color='#0000ff', opacity=0.5)
 
-# Display the map in Streamlit
-m.to_streamlit(height=500)
+# Save the map to an HTML file
+route_map.save('route.html')
