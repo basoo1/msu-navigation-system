@@ -5,4 +5,3 @@ ipyleaflet
 folium
 streamlit-folium
 osmnx
-scikit-learn
