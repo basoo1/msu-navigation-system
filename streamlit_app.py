@@ -2,8 +2,9 @@ import streamlit as st
 import folium as fm
 import osmnx as ox
 from streamlit_folium import st_folium
+from folium.plugins import Fullscreen
 import json
-
+st.set_page_config(layout="wide")
 def find_closest_match(user_input, locations):
     for location, details in locations.items():
         # check if the user input matches the prefix of each locations
@@ -33,11 +34,9 @@ with open("locations.json", "r") as file:
 x = st.text_input("Enter Location")
 
 result = find_closest_match(x, locations)
-st.write(result)
 
 location_details = locations[result]
 location_coords = location_details["coordinates"]
-st.write(location_coords)
 
 coords = [(125.124938, 6.064593), (location_coords)]
 
@@ -54,5 +53,6 @@ fm.PolyLine(locations=route_coords,
             color='blue', 
             weight=5).add_to(m)
 
+Fullscreen().add_to(m)
 # display the map
-st_folium(m)
+st_folium(m, use_container_width=True)
