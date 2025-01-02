@@ -6,11 +6,13 @@
     },
     "College of Natural Sciences and Mathematics": {
         "offices": ["I.T. Office"],
-        "aliases": ["CNSM", "Natural Sciences", "Mathematics"]
+        "aliases": ["CNSM", "Natural Sciences", "Mathematics"],
+        "coordinates": []
         
     },
     "College of Social Sciences and Humanities": {
         "offices": ["Office A1"],
-        "aliases": ["CSSH", "Social Sciences", "Humanities"]
+        "aliases": ["CSSH", "Social Sciences", "Humanities"],
+        "coordinates":[125.126034, 6.067531]
     }
 }
