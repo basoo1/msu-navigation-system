@@ -1,0 +1,14 @@
+{
+    "Senior High School": {
+        "offices": ["Siklab 1", "Office A2"],
+        "aliases": ["SHS", "Siklab", "Senior", "High", "School"]
+    },
+    "College of Natural Sciences and Mathematics": {
+        "offices": ["I.T. Office"],
+        "aliases": ["CNSM", "Natural Sciences", "Mathematics"]
+    },
+    "College of Social Sciences and Humanities": {
+        "offices": ["Office A1"],
+        "aliases": ["CSSH", "Social Sciences", "Humanities"]
+    }
+}
