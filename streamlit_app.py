@@ -32,8 +32,6 @@ st.markdown(remove_top_margin, unsafe_allow_html=True)
 st.markdown(hide_st_style, unsafe_allow_html=True)
 st.container(height=None, border=None, key=None)
 
-LocateControl(auto_start=True)
-
 x = st.text_input("Enter Location")
 with open("locations.json", "r") as file:
     locations = json.load(file)
@@ -43,5 +41,6 @@ location_coords = location_details["coordinates"]
 coords = [(6.067531, 125.126034), (location_coords)]
 m =  utility.createMap()
 utility.addRoute(m, coords)
+LocateControl(auto_start=True).add_to(m)
 Fullscreen().add_to(m)
 st_folium(m, use_container_width=True)
