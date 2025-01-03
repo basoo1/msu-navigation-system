@@ -2,7 +2,7 @@
     "Senior High School": {
         "offices": ["Siklab 1", "Office A2"],
         "aliases": ["SHS", "Siklab", "Senior", "High", "School"],
-        "coordinates": [125.128217, 6.068547]
+        "coordinates": [6.068547, 125.128217]
     },
     "College of Natural Sciences and Mathematics": {
         "offices": ["I.T. Office"],
@@ -13,6 +13,6 @@
     "College of Social Sciences and Humanities": {
         "offices": ["Office A1"],
         "aliases": ["CSSH", "Social Sciences", "Humanities"],
-        "coordinates":[125.126034, 6.067531]
+        "coordinates":[6.067531, 125.126034]
     }
 }
