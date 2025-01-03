@@ -2,7 +2,7 @@ import streamlit as st
 import folium as fm
 import osmnx as ox
 from streamlit_folium import st_folium
-from streamlit_js_eval import get_geolocation
+from folium.plugins import LocateControl
 from folium.plugins import Fullscreen
 from folium.plugins import MousePosition
 import json
@@ -32,15 +32,15 @@ st.markdown(remove_top_margin, unsafe_allow_html=True)
 st.markdown(hide_st_style, unsafe_allow_html=True)
 st.container(height=None, border=None, key=None)
 
-pos = MousePosition()
+LocateControl(auto_start=True)
+
 x = st.text_input("Enter Location")
 with open("locations.json", "r") as file:
     locations = json.load(file)
 result = utility.findMatch(x, locations)
 location_details = locations[result]
 location_coords = location_details["coordinates"]
-location = st.write(get_geolocation)
-coords = [(get_geolocation()), (location_coords)]
+coords = [(6.067531, 125.126034), (location_coords)]
 m =  utility.createMap()
 utility.addRoute(m, coords)
 Fullscreen().add_to(m)
