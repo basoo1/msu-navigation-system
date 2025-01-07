@@ -1,9 +1,7 @@
 import streamlit as st
 import folium as fm
 import osmnx as ox
-import streamlit.components.v1 as stc
 from streamlit_folium import st_folium
-from folium.plugins import Fullscreen
 from streamlit_js_eval import get_geolocation
 import json
 import utility
