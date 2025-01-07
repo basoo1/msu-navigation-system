@@ -58,5 +58,4 @@ if x:
       #map creation
       m =  utility.createMap(lat=local_lat, lng=local_lng)   
       utility.addRoute(m, coords)
-      Fullscreen().add_to(m)
       st_folium(m, use_container_width=True)
