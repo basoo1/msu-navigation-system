@@ -7,12 +7,42 @@
     "College of Natural Sciences and Mathematics": {
         "offices": ["I.T. Office"],
         "aliases": ["CNSM", "Natural Sciences", "Mathematics"],
-        "coordinates": []
+        "coordinates": [6.069362, 125.125818]
         
     },
     "College of Social Sciences and Humanities": {
         "offices": ["Office A1"],
         "aliases": ["CSSH", "Social Sciences", "Humanities"],
-        "coordinates":[6.067531, 125.126034]
+        "coordinates": [ 6.067531, 125.126034]
+    },
+    "College of Fisheries": {
+        "offices": [],
+        "aliases": ["COF", "Fisheries"],
+        "coordinates": [6.064369, 125.130034]
+    },
+    "College of Engineering": {
+        "offices": [],
+        "aliases": ["COE", "Engineering"],
+        "coordinates": [6.064198, 125.126805]
+    },
+    "College of Agriculture": {
+        "offices": [],
+        "aliases": ["COA", "Agriculture"],
+        "coordinates": [6.070333, 125.125774]
+    },
+    "College of Education": {
+        "offices": [],
+        "aliases": ["COEd", "Education"],
+        "coordinates": [6.067772, 125.128274]
+    },
+    "Business Administration and Accountancy": {
+        "offices": [],
+        "aliases": ["BA"],
+        "coordinates": [6.064412, 125.128306]
+    },
+    "Library": {
+        "offices": [],
+        "aliases": [],
+        "coordinates": [6.066663, 125.127996]
     }
 }
