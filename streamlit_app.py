@@ -4,7 +4,8 @@ import osmnx as ox
 from streamlit_folium import st_folium
 from folium.plugins import LocateControl
 from folium.plugins import Fullscreen
-from folium.plugins import MousePosition
+from streamlit_geolocation import streamlit_geolocation
+from streamlit_js_eval import get_geolocation
 import json
 import utility
 
@@ -38,9 +39,15 @@ with open("locations.json", "r") as file:
 result = utility.findMatch(x, locations)
 location_details = locations[result]
 location_coords = location_details["coordinates"]
-coords = [(6.067531, 125.126034), (location_coords)]
+
+local_coords = get_geolocation()
+local_lat = local_coords['coords']['latitude']
+local_lng = local_coords['coords']['longitude']
+
+coords = [(local_lat, local_lng), (location_coords)]
+
+#map creation
 m =  utility.createMap()
 utility.addRoute(m, coords)
-LocateControl(auto_start=True).add_to(m)
 Fullscreen().add_to(m)
 st_folium(m, use_container_width=True)
