@@ -3,3 +3,4 @@ folium
 streamlit-folium
 osmnx
 scikit-learn
+streamlit_js_eval
