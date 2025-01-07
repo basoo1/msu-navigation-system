@@ -12,11 +12,11 @@ def findMatch(user_input, locations):
     
     return "No match found."
 
-def createMap():
+def createMap(lat, lng):
     minLat, maxLat = 6.07406, 6.06009
     minLon, maxLon = 125.13257, 125.12135
 
-    m = fm.Map(location=[6.064593, 125.124938], 
+    m = fm.Map(location=[lat, lng], 
                zoom_start=16,
                max_bounds=True,
                min_lat=minLat,
@@ -27,15 +27,29 @@ def createMap():
     return m
 
 def addRoute(m, coords):
-    G = ox.graph_from_place('Mindanao State University General Santos, General Santos, Philippines', network_type='all')
 
-    orig_node = ox.distance.nearest_nodes(G, X=coords[0][1], Y=coords[0][0])
-    dest_node = ox.distance.nearest_nodes(G, X=coords[1][1], Y=coords[1][0])
+    #walk mode
+    walk_graph = ox.graph_from_place('Mindanao State University General Santos, General Santos, Philippines', network_type='walk')
 
-    route = ox.routing.shortest_path(G, orig_node, dest_node, weight='length')
-    route_coords = [(G.nodes[node]['y'], G.nodes[node]['x']) for node in route]
+    orig_node_walk = ox.distance.nearest_nodes(walk_graph, X=coords[0][1], Y=coords[0][0])
+    dest_node_walk = ox.distance.nearest_nodes(walk_graph, X=coords[1][1], Y=coords[1][0])
 
-    fm.PolyLine(locations=route_coords, color='blue', weight=5).add_to(m)
+    walk_route = ox.routing.shortest_path(walk_graph, orig_node_walk, dest_node_walk, weight='length')
+    walk_route_coords = [(walk_graph.nodes[node]['y'], walk_graph.nodes[node]['x']) for node in walk_route]
+
+
+    fm.PolyLine(locations=walk_route_coords, color='blue', weight=5, opacity=0.5).add_to(m)
+
+    #drive mode
+    drive_graph = ox.graph_from_place('Mindanao State University General Santos, General Santos, Philippines', network_type='drive_service')
+
+    orig_node_drive = ox.distance.nearest_nodes(drive_graph, X=coords[0][1], Y=coords[0][0])
+    dest_node_drive = ox.distance.nearest_nodes(drive_graph, X=coords[1][1], Y=coords[1][0])
+
+    drive_route = ox.routing.shortest_path(drive_graph, orig_node_drive, dest_node_drive, weight='length')
+    drive_route_coords = [(drive_graph.nodes[node]['y'], drive_graph.nodes[node]['x']) for node in drive_route]
+
+    fm.PolyLine(locations=drive_route_coords, color='blue', weight=5).add_to(m)
 
 #using mouse for testing
 def getUserLocation(m):
