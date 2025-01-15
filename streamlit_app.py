@@ -6,7 +6,7 @@ from streamlit_js_eval import get_geolocation
 import json
 import utility
 
-#Streamlit Setup
+# Streamlit Setup
 st.set_page_config(layout="wide")
 
 hide_st_style = """
@@ -29,7 +29,7 @@ custom_margin = """
 removethatfuckingpieceofshitrandomaahhhelement = """
          <style>
          .stElementContainer.st-key-getLocation-- {
-           display: none;
+            display: none;
          }
          </style>
          """
@@ -39,6 +39,8 @@ st.markdown(hide_st_style, unsafe_allow_html=True)
 st.markdown(removethatfuckingpieceofshitrandomaahhhelement, unsafe_allow_html=True)
 
 x = st.text_input("Enter Location")
+
+m = utility.createMap()
 
 if x:
    with open("locations.json", "r") as file:
@@ -50,12 +52,13 @@ if x:
    local_coords = get_geolocation()
 
    if local_coords:
+      
       local_lat = local_coords['coords']['latitude'] 
       local_lng = local_coords['coords']['longitude']
 
       coords = [(local_lat, local_lng), (location_coords)]
-    
-      #map creation
-      m =  utility.createMap(lat=local_lat, lng=local_lng)   
-      utility.addRoute(m, coords)
-      st_folium(m, use_container_width=True)
+
+      m = utility.createMap(lat=local_lat, lng=local_lng)
+      r = utility.addRoute(m, coords)
+
+st_folium(m, use_container_width=True)
