@@ -40,7 +40,7 @@ st.markdown(removethatfuckingpieceofshitrandomaahhhelement, unsafe_allow_html=Tr
 
 x = st.text_input("Enter Location")
 
-m = utility.createMap()
+m = utility.createMap(lat=0, lng=0)
 
 if x:
    with open("locations.json", "r") as file:
