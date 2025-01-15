@@ -1,11 +1,8 @@
 import folium as fm
 import osmnx as ox
 
-from folium.plugins import MousePosition
-
 def findMatch(user_input, locations):
     for location, details in locations.items():
-        # check if the user input matches the prefix of each locations
         for name in [location] + details["aliases"]:
             if name.lower().startswith(user_input.lower()):
                 return location
@@ -26,31 +23,19 @@ def createMap(lat, lng):
                min_zoom=16)
     return m
 
+#optimize this
 def addRoute(m, coords):
+    def getRoute(graphType, color, opacity=1.0):
 
-    #walk mode
-    walk_graph = ox.graph_from_place('Mindanao State University General Santos, General Santos, Philippines', network_type='walk')
+        graph = ox.graph_from_place('Mindanao State University General Santos, General Santos, Philippines', network_type=graphType, simplify=False)
 
-    orig_node_walk = ox.distance.nearest_nodes(walk_graph, X=coords[0][1], Y=coords[0][0])
-    dest_node_walk = ox.distance.nearest_nodes(walk_graph, X=coords[1][1], Y=coords[1][0])
+        originNode = ox.distance.nearest_nodes(graph, X=coords[0][1], Y=coords[0][0])
+        destNode = ox.distance.nearest_nodes(graph, X=coords[1][1], Y=coords[1][0])
 
-    walk_route = ox.routing.shortest_path(walk_graph, orig_node_walk, dest_node_walk, weight='length')
-    walk_route_coords = [(walk_graph.nodes[node]['y'], walk_graph.nodes[node]['x']) for node in walk_route]
+        route = ox.routing.shortest_path(graph, originNode, destNode, weight='length')
+        routeCoords = [(graph.nodes[node]['y'], graph.nodes[node]['x']) for node in route]
 
+        fm.PolyLine(locations=routeCoords, color=color, weight=5, opacity=opacity).add_to(m)
 
-    fm.PolyLine(locations=walk_route_coords, color='blue', weight=5, opacity=0.5).add_to(m)
-
-    #drive mode
-    drive_graph = ox.graph_from_place('Mindanao State University General Santos, General Santos, Philippines', network_type='drive_service')
-
-    orig_node_drive = ox.distance.nearest_nodes(drive_graph, X=coords[0][1], Y=coords[0][0])
-    dest_node_drive = ox.distance.nearest_nodes(drive_graph, X=coords[1][1], Y=coords[1][0])
-
-    drive_route = ox.routing.shortest_path(drive_graph, orig_node_drive, dest_node_drive, weight='length')
-    drive_route_coords = [(drive_graph.nodes[node]['y'], drive_graph.nodes[node]['x']) for node in drive_route]
-
-    fm.PolyLine(locations=drive_route_coords, color='blue', weight=5).add_to(m)
-
-#using mouse for testing
-def getUserLocation(m):
-    MousePosition().add_to(m)
+    getRoute(graphType='walk', color='maroon', opacity=0.5)
+    getRoute(graphType='drive_service', color='maroon')
