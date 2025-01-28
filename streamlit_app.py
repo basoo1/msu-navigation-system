@@ -26,7 +26,7 @@ custom_margin = """
          .element-container 
          </style>
          """
-removethatfuckingpieceofshitrandomaahhhelement = """
+removerandomelement = """
          <style>
          .stElementContainer.st-key-getLocation-- {
             display: none;
@@ -36,7 +36,7 @@ removethatfuckingpieceofshitrandomaahhhelement = """
 
 st.markdown(custom_margin, unsafe_allow_html=True)
 st.markdown(hide_st_style, unsafe_allow_html=True)
-st.markdown(removethatfuckingpieceofshitrandomaahhhelement, unsafe_allow_html=True)
+st.markdown(removerandomelement, unsafe_allow_html=True)
 
 x = st.text_input("Enter Location")
 
