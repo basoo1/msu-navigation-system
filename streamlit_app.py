@@ -61,4 +61,4 @@ if x:
       m = utility.createMap(lat=local_lat, lng=local_lng)
       r = utility.addRoute(m, coords)
 
-st_folium(m, use_container_width=True)
+st_folium(m, use_container_width=True, height=500)
