@@ -52,7 +52,6 @@ if x:
    local_coords = get_geolocation()
 
    if local_coords:
-      st.write(local_coords)
       local_lat = local_coords['coords']['latitude'] 
       local_lng = local_coords['coords']['longitude']
 
