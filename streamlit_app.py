@@ -55,7 +55,6 @@ if x:
    result = utility.findMatch(x, locations)
 
    x = st.empty
-   x = st.text_input('Enter Location')
 
    location_details = locations[result]
    location_coords = location_details["coordinates"]
