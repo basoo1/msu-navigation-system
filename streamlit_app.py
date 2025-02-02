@@ -54,8 +54,6 @@ if x:
 
    result = utility.findMatch(x, locations)
 
-   x = st.empty
-
    location_details = locations[result]
    location_coords = location_details["coordinates"]
 
