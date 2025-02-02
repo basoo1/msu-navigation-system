@@ -46,13 +46,14 @@ x = st.text_input('Enter Location')
 
 m = utility.createMap(lat=0, lng=0)
 
+local_coords = get_geolocation()
+
 if x:
    with open("locations.json", "r") as file:
       locations = json.load(file)
 
    result = utility.findMatch(x, locations)
 
-   local_coords = get_geolocation()
    location_details = locations[result]
    location_coords = location_details["coordinates"]
 
