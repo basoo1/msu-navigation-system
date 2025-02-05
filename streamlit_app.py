@@ -7,7 +7,7 @@ from streamlit_js_eval import get_geolocation
 import json
 import utility
 
-# Streamlit Setup
+# this fixes wide issue
 st.set_page_config(layout="wide")
 
 hide_st_style = """
