@@ -1,1 +1,153 @@
+{
+    "Guard House Entrance": {
+        "coordinates": [6.065641, 125.131491]
+    },
 
+    "Guard House Exit": {
+        "coordinates": [6.065527, 125.131499]
+    },
+
+    "Administration Building": {
+        "offices": [],
+        "aliases": ["Y Building"],
+        "coordinates": [6.065641, 125.131491]
+    },
+
+    "Gemma West": {
+        "offices": [],
+        "aliases": [],
+        "coordinates": [6.068100, 125.127009]
+    },
+
+    "Laktanan": {
+        "offices": [],
+        "aliases": [],
+        "coordinates": [6.066713, 125.128532]
+    },
+
+    "Pavillion": {
+        "offices": [],
+        "aliases": [],
+        "coordinates": [6.066367, 125.128618]
+    },
+
+    "Gemma East": {
+        "offices": [],
+        "aliases": [],
+        "coordinates": [6.068143, 125.127607]
+    },
+
+    "Soccer Field": {
+        "offices": [],
+        "aliases": ["Football Field"],
+        "coordinates": [6.066817, 125.125169]
+    },
+
+    "Baseball Field": {
+        "offices": [],
+        "aliases": [],
+        "coordinates": [6.065078, 125.125367]
+    },
+
+    "University Police Office": {
+        "offices": ["Police Office", "Police"],
+        "aliases": ["Football Field"],
+        "coordinates": [6.065783, 125.127438]
+    },
+
+    "Office of Student Affairs and Services": {
+        "offices": [],
+        "aliases": ["OSA", "OSA Building"],
+        "coordinates": [6.069714, 125.124106]
+    },
+
+    "Gym": {
+        "offices": [],
+        "aliases": [],
+        "coordinates": [6.066828, 125.124219]
+    },
+
+    "Regional Science Research Center": {
+        "offices": [],
+        "aliases": ["RSRC"],
+        "coordinates": [6.069701, 125.125826]
+    },
+
+    "Boy's Dormitory": {
+        "offices": [],
+        "aliases": ["Boy's Dorm", "Boys Dorm"],
+        "coordinates": [6.070690, 125.124112]
+    },
+
+    "Girl's's Dormitory": {
+        "offices": [],
+        "aliases": ["Girl's Dorm", "Girls Dorm"],
+        "coordinates": [6.068759, 125.124241]
+    },
+
+    "Senior High School": {
+        "offices": ["Siklab 1", "Office A2"],
+        "aliases": ["SHS", "Siklab", "Senior", "High", "School"],
+        "coordinates": [6.068547, 125.128217]
+    },
+    "College of Natural Sciences and Mathematics": {
+        "offices": ["I.T. Office"],
+        "aliases": ["CNSM", "Natural Sciences", "Mathematics"],
+        "coordinates": [6.069362, 125.125818]
+        
+    },
+    "College of Social Sciences and Humanities": {
+        "offices": ["Office A1"],
+        "aliases": ["CSSH", "Social Sciences", "Humanities"],
+        "coordinates": [ 6.067531, 125.126034]
+    },
+    "College of Fisheries": {
+        "offices": [],
+        "aliases": ["COF", "Fisheries"],
+        "coordinates": [6.064369, 125.130034]
+    },
+    "College of Engineering": {
+        "offices": ["H Building"],
+        "aliases": ["COE", "Engineering"],
+        "coordinates": [6.064182, 125.126845]
+    },
+
+    "Jeepney Terminal": {
+        "offices": [],
+        "aliases": ["Terminal"],
+        "coordinates": [6.067316, 125.127215]
+    },
+
+    "Physical Plant Division": {
+        "offices": [],
+        "aliases": ["PPD"],
+        "coordinates": [6.069567, 125.123272]
+    },
+
+    "College of Agriculture": {
+        "offices": [],
+        "aliases": ["COA", "Agriculture"],
+        "coordinates": [6.070333, 125.125774]
+    },
+    "College of Education": {
+        "offices": [],
+        "aliases": ["COEd", "Education"],
+        "coordinates": [6.067772, 125.128274]
+    },
+    "Business Administration and Accountancy": {
+        "offices": [],
+        "aliases": ["BA"],
+        "coordinates": [6.064412, 125.128306]
+    },
+    "Library": {
+        "offices": [],
+        "aliases": [],
+        "coordinates": [6.066663, 125.127996]
+    },
+
+    "PHIVOLCS": {
+        "offices": [],
+        "aliases": [],
+        "coordinates": [6.063345, 125.129771]
+    }
+}
