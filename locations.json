@@ -1,9 +1,13 @@
 {
     "Guard House Entrance": {
+        "offices": [],
+        "aliases": [],
         "coordinates": [6.065641, 125.131491]
     },
 
     "Guard House Exit": {
+        "offices": [],
+        "aliases": [],
         "coordinates": [6.065527, 125.131499]
     },
 
