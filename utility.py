@@ -38,4 +38,4 @@ def addRoute(m, coords):
         fm.PolyLine(locations=routeCoords, color=color, weight=5, opacity=opacity).add_to(m)
 
     getRoute(graphType='walk', color='maroon', opacity=0.5)
-    getRoute(graphType='drive_service', color='yellow')
+    getRoute(graphType='drive_service', color='maroon')
