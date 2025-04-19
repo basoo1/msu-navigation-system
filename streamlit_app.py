@@ -9,34 +9,16 @@ import utility
 
 # stremalit setup
 st.set_page_config(layout="wide")
-st.markdown("""
+
+move_search_bar_up = """
     <style>
-    html, body, .block-container {
-        height: 100vh;
-        margin: 0;
-        padding: 0;
-    }
-
-    .block-container {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .map-container {
-        flex-grow: 1;
-    }
-
-    .stTextInput input {
-        width: 100%;
-        padding: 10px;
-        font-size: 1rem;
-    }
-
-    #MainMenu, header, footer {
-        visibility: hidden;
+    div[data-baseweb="input"] {
+        margin-top: -5rem;
     }
     </style>
-""", unsafe_allow_html=True)
+    """
+st.markdown(move_search_bar_up, unsafe_allow_html=True)
+
 hide_st_style = """
          <style>
          #MainMenu {visibility: hidden;}
@@ -47,10 +29,10 @@ hide_st_style = """
 custom_margin = """
          <style>
          .block-container 
-         {padding-top: 1.3rem;
-         padding-bottom: 1.3em;
-         padding-left: 0.5rem;
-         padding-right: 0.5rem;}
+         {padding-top: 0rem;
+         padding-bottom: 0em;
+         padding-left: 1rem;
+         padding-right: 1rem;}
          .element-container 
          </style>
          """
@@ -64,12 +46,13 @@ removerandomelement = """
 
 st.markdown(custom_margin, unsafe_allow_html=True)
 st.markdown(removerandomelement, unsafe_allow_html=True)
+st.markdown(hide_st_style, unsafe_allow_html=True)
 
 # preload map
 if 'map' not in st.session_state:
     st.session_state['map'] = utility.createMap(lat=0, lng=0)
 
-x = st.text_input('Enter Location')
+x = st.text_input('')
 m = utility.createMap(lat=0, lng=0)
 
 #check locatations file
