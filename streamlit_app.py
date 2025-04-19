@@ -9,7 +9,34 @@ import utility
 
 # stremalit setup
 st.set_page_config(layout="wide")
+st.markdown("""
+    <style>
+    html, body, .block-container {
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+    }
 
+    .block-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .map-container {
+        flex-grow: 1;
+    }
+
+    .stTextInput input {
+        width: 100%;
+        padding: 10px;
+        font-size: 1rem;
+    }
+
+    #MainMenu, header, footer {
+        visibility: hidden;
+    }
+    </style>
+""", unsafe_allow_html=True)
 hide_st_style = """
          <style>
          #MainMenu {visibility: hidden;}
