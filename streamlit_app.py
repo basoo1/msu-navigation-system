@@ -10,6 +10,18 @@ import utility
 # stremalit setup
 st.set_page_config(layout="wide")
 
+
+st.markdown(
+    """
+    <style>
+    .folium-map {
+        height: 0vh;
+    }
+    </style>
+    """, 
+    unsafe_allow_html=True
+)
+
 hide_st_style = """
          <style>
          #MainMenu {visibility: hidden;}
@@ -20,7 +32,7 @@ hide_st_style = """
 custom_margin = """
          <style>
          .block-container 
-         {padding-top: 1.3rem;
+         {padding-top: 1rem;
          padding-bottom: 1.3em;
          padding-left: 0.5rem;
          padding-right: 0.5rem;}
@@ -43,7 +55,6 @@ if 'map' not in st.session_state:
     st.session_state['map'] = utility.createMap(lat=0, lng=0)
 
 x = st.text_input('Enter Location')
-
 m = utility.createMap(lat=0, lng=0)
 
 #check locatations file
@@ -80,4 +91,4 @@ if x:
       fm.Marker(location=(local_lat, local_lng), icon=fm.Icon(color="blue")).add_to(st.session_state['map'])
       fm.Marker(location=(location_coords), icon=fm.Icon(color="red")).add_to(st.session_state['map'])
 
-st_folium(st.session_state["map"], use_container_width=True, height=500, returned_objects=[])
+st_folium(st.session_state["map"], use_container_width=True, returned_objects=[])
