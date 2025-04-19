@@ -19,12 +19,6 @@ move_search_bar_up = """
     """
 st.markdown(move_search_bar_up, unsafe_allow_html=True)
 
-st.markdown('''
-            <style>
-.appview-container .main .block-container{{
-        padding-top: {padding_top}rem;    }}
-</style>''', unsafe_allow_html = True)
-
 hide_st_style = """
          <style>
          #MainMenu {visibility: hidden;}
