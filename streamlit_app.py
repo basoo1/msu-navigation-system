@@ -13,7 +13,7 @@ st.set_page_config(layout="wide")
 move_search_bar_up = """
     <style>
     div[data-baseweb="input"] {
-        margin-top: -5rem;
+        margin-top: -4.5rem;
     }
     </style>
     """
