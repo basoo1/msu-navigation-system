@@ -10,6 +10,15 @@ import utility
 # stremalit setup
 st.set_page_config(layout="wide")
 
+move_search_bar_up = """
+    <style>
+    div[data-baseweb="input"] {
+        margin-top: -5rem;
+    }
+    </style>
+    """
+st.markdown(move_search_bar_up, unsafe_allow_html=True)
+
 st.markdown('''
             <style>
 .appview-container .main .block-container{{
