@@ -10,14 +10,11 @@ import utility
 # stremalit setup
 st.set_page_config(layout="wide")
 
-move_search_bar_up = """
-    <style>
-    div[data-baseweb="input"] {
-        margin-top: -5rem;
-    }
-    </style>
-    """
-st.markdown(move_search_bar_up, unsafe_allow_html=True)
+st.markdown('''
+            <style>
+.appview-container .main .block-container{{
+        padding-top: {padding_top}rem;    }}
+</style>''', unsafe_allow_html = True)
 
 hide_st_style = """
          <style>
@@ -31,8 +28,8 @@ custom_margin = """
          .block-container 
          {padding-top: 0rem;
          padding-bottom: 0em;
-         padding-left: 1rem;
-         padding-right: 1rem;}
+         padding-left: .5rem;
+         padding-right: .5rem;}
          .element-container 
          </style>
          """
@@ -69,8 +66,7 @@ if x:
       geolocation = get_geolocation()
       if geolocation:
          st.session_state['local_coords'] = geolocation
-      else:
-         st.error("Please wait while we get your device's location.")
+
    else:
       geolocation = st.session_state['local_coords']
 
@@ -89,4 +85,4 @@ if x:
       fm.Marker(location=(local_lat, local_lng), icon=fm.Icon(color="blue")).add_to(st.session_state['map'])
       fm.Marker(location=(location_coords), icon=fm.Icon(color="red")).add_to(st.session_state['map'])
 
-st_folium(st.session_state["map"], use_container_width=True, height=600, returned_objects=[])
+st_folium(st.session_state["map"], use_container_width=True, returned_objects=[])
