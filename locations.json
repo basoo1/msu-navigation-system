@@ -12,33 +12,21 @@
     },
 
     "Administration Building": {
-        "offices": [],
+        "offices": ["Registrar's Office", "Office of the Chancellor", "Admissions Office"],
         "aliases": ["Y Building"],
-        "coordinates": [6.065641, 125.131491]
-    },
-
-    "Gemma West": {
-        "offices": [],
-        "aliases": [],
-        "coordinates": [6.068100, 125.127009]
+        "coordinates": [6.065375, 125.128363]
     },
 
     "Laktanan": {
         "offices": [],
         "aliases": [],
-        "coordinates": [6.066713, 125.128532]
+        "coordinates": [6.066367, 125.128618]
     },
 
     "Pavillion": {
         "offices": [],
         "aliases": [],
-        "coordinates": [6.066367, 125.128618]
-    },
-
-    "Gemma East": {
-        "offices": [],
-        "aliases": [],
-        "coordinates": [6.068143, 125.127607]
+        "coordinates": [6.066713, 125.128532]
     },
 
     "Soccer Field": {
@@ -54,8 +42,8 @@
     },
 
     "University Police Office": {
-        "offices": ["Police Office", "Police"],
-        "aliases": ["Football Field"],
+        "offices": [],
+        "aliases": ["Police Office", "Police"],
         "coordinates": [6.065783, 125.127438]
     },
 
@@ -65,10 +53,94 @@
         "coordinates": [6.069714, 125.124106]
     },
 
-    "Gym": {
+    "Infirmary": {
+        "offices": [],
+        "aliases": [],
+        "coordinates": [6.064972, 125.123213]
+    },
+
+    "Gymnasium": {
         "offices": [],
         "aliases": [],
         "coordinates": [6.066828, 125.124219]
+    },
+
+    "Tennis Court": {
+        "offices": [],
+        "aliases": [],
+        "coordinates": [6.066769, 125.123608]
+    },
+
+    "Open Court": {
+        "offices": [],
+        "aliases": [],
+        "coordinates": [6.066164, 125.123803]
+    },
+
+    "Volleyball Court": {
+        "offices": [],
+        "aliases": [],
+        "coordinates": [6.066204, 125.123543]
+    },
+
+    "Boy's Dormitory": {
+        "offices": [],
+        "aliases": ["Boy's Dorm", "Boys Dorm"],
+        "coordinates": [6.070680, 125.124080]
+    },
+
+    "Girl's's Dormitory": {
+        "offices": [],
+        "aliases": ["Girl's Dorm", "Girls Dorm"],
+        "coordinates": [6.068765, 125.124224]
+    },
+
+    "COED Dorm (Boys)": {
+        "offices": [],
+        "aliases": [],
+        "coordinates": [6.064249, 125.124222]
+    },
+
+    "COED Dorm (Girls)": {
+        "offices": [],
+        "aliases": [],
+        "coordinates": [6.068759, 125.124241]
+    },
+
+    "Senior High School": {
+        "offices": [],
+        "aliases": ["SHS", "Siklab"],
+        "coordinates": [6.068547, 125.128217]
+    },
+
+    "College of Social Sciences and Humanities": {
+        "offices": [],
+        "aliases": ["CSSH"],
+        "coordinates": [6.067690, 125.125997]
+    },
+
+    "Gemma West": {
+        "offices": [],
+        "aliases": [],
+        "coordinates": [6.068100, 125.127009]
+    },
+
+    "Gemma East": {
+        "offices": [],
+        "aliases": [],
+        "coordinates": [6.068143, 125.127607]
+    },
+
+    "New CSSH Building": {
+        "offices": [],
+        "aliases": ["New CSSH"],
+        "coordinates": [6.067772, 125.125037]
+    },
+
+    "College of Natural Sciences and Mathematics": {
+        "offices": [],
+        "aliases": ["CNSM", "Natural Sciences", "Mathematics"],
+        "coordinates": [6.069362, 125.125818]
     },
 
     "Regional Science Research Center": {
@@ -77,43 +149,76 @@
         "coordinates": [6.069701, 125.125826]
     },
 
-    "Boy's Dormitory": {
+    "Physics Building (CNSM)": {
         "offices": [],
-        "aliases": ["Boy's Dorm", "Boys Dorm"],
-        "coordinates": [6.070690, 125.124112]
-    },
-
-    "Girl's's Dormitory": {
-        "offices": [],
-        "aliases": ["Girl's Dorm", "Girls Dorm"],
-        "coordinates": [6.068759, 125.124241]
-    },
-
-    "Senior High School": {
-        "offices": ["Siklab 1", "Office A2"],
-        "aliases": ["SHS", "Siklab", "Senior", "High", "School"],
-        "coordinates": [6.068547, 125.128217]
-    },
-    "College of Natural Sciences and Mathematics": {
-        "offices": ["I.T. Office"],
-        "aliases": ["CNSM", "Natural Sciences", "Mathematics"],
+        "aliases": ["Physics"],
         "coordinates": [6.069362, 125.125818]
         
     },
-    "College of Social Sciences and Humanities": {
-        "offices": ["Office A1"],
-        "aliases": ["CSSH", "Social Sciences", "Humanities"],
-        "coordinates": [ 6.067531, 125.126034]
+
+    "Science Laboratory (CNSM)": {
+        "offices": [],
+        "aliases": ["Science"],
+        "coordinates": [6.068967, 125.125869]
+        
     },
+
+    "I.T Building (CNSM)": {
+        "offices": [],
+        "aliases": ["IT"],
+        "coordinates": [6.069093, 125.126764]
+        
+    },
+
+    "Math Building (CNSM)": {
+        "offices": [],
+        "aliases": ["Mathematics"],
+        "coordinates": [6.069477, 125.126896]
+        
+    },
+
+    "New CNSM Building": {
+        "offices": [],
+        "aliases": [],
+        "coordinates": [6.069426, 125.124881]
+        
+    },
+
+    "Academic Building": {
+        "offices": [],
+        "aliases": [],
+        "coordinates": [6.069517, 125.127497]
+        
+    },
+
+    "Supreme Student Council Building": {
+        "offices": [],
+        "aliases": ["SSC"],
+        "coordinates": [6.068921, 125.124892]
+    },
+
     "College of Fisheries": {
         "offices": [],
         "aliases": ["COF", "Fisheries"],
         "coordinates": [6.064369, 125.130034]
     },
+
     "College of Engineering": {
-        "offices": ["H Building"],
-        "aliases": ["COE", "Engineering"],
+        "offices": [],
+        "aliases": ["COE", "Engineering", "H Building"],
         "coordinates": [6.064182, 125.126845]
+    },
+
+    "Engineering Technology Building": {
+        "offices": [],
+        "aliases": [],
+        "coordinates": [6.063652, 125.125804]
+    },
+
+    "UTM Engineering Laboratory": {
+        "offices": [],
+        "aliases": [],
+        "coordinates": [6.064260, 125.126201]
     },
 
     "Jeepney Terminal": {
@@ -133,18 +238,44 @@
         "aliases": ["COA", "Agriculture"],
         "coordinates": [6.070333, 125.125774]
     },
+
+    "Science and Technology Training Center": {
+        "offices": [],
+        "aliases": ["STTC"],
+        "coordinates": [6.070786, 125.126756]
+    },
+
+    "Sigay Center": {
+        "offices": [],
+        "aliases": ["COA", "Agriculture"],
+        "coordinates": [6.070423, 125.124774]
+    },
+
+    "Agricultural Engineering Complex": {
+        "offices": [],
+        "aliases": [],
+        "coordinates": [6.071850, 125.125005]
+    },
+
     "College of Education": {
         "offices": [],
         "aliases": ["COEd", "Education"],
         "coordinates": [6.067772, 125.128274]
     },
+
+    "College of Education Dormitory": {
+        "offices": [],
+        "aliases": ["COEd Dorm"],
+        "coordinates": [6.070868, 125.127456]
+    },
+
     "Business Administration and Accountancy": {
         "offices": [],
         "aliases": ["BA"],
         "coordinates": [6.064412, 125.128306]
     },
-    "Library": {
-        "offices": [],
+    "University Library": {
+        "offices": ["Senior High School Faculty"],
         "aliases": [],
         "coordinates": [6.066663, 125.127996]
     },
@@ -153,5 +284,17 @@
         "offices": [],
         "aliases": [],
         "coordinates": [6.063345, 125.129771]
+    },
+
+    "Biodiversity Center": {
+        "offices": [],
+        "aliases": [],
+        "coordinates": [6.064646, 125.129154]
+    },
+
+    "ROTC Grounds": {
+        "offices": [],
+        "aliases": [],
+        "coordinates": [6.062827, 125.126424]
     }
 }
