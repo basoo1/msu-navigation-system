@@ -1,6 +1,5 @@
 import folium as fm
 import osmnx as ox
-from folium.plugins import Fullscreen
 
 def findMatch(user_input, locations):
     for location, details in locations.items():
@@ -22,7 +21,6 @@ def createMap(lat, lng):
                min_lon=minLon,
                max_lon=maxLon,
                min_zoom=16)
-    Fullscreen(position='topright').add_to(m)
     return m
 
 #optimize this
