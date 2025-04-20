@@ -27,7 +27,7 @@ def createMap(lat, lng):
 def addRoute(m, coords):
     def getRoute(graphType, color, opacity=1.0):
 
-        graph = ox.graph_from_place('Mindanao State University General Santos, General Santos, Philippines', network_type=graphType, simplify=False)
+        graph = ox.graph_from_point(center_point=coords[0], dist=1000, network_type=graphType, simplify=False)
 
         originNode = ox.distance.nearest_nodes(graph, X=coords[0][1], Y=coords[0][0])
         destNode = ox.distance.nearest_nodes(graph, X=coords[1][1], Y=coords[1][0])
