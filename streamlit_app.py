@@ -88,5 +88,4 @@ if x:
       fm.Marker(location=(local_lat, local_lng), icon=fm.Icon(color="blue")).add_to(st.session_state['map'])
       fm.Marker(location=(location_coords), icon=fm.Icon(color="red")).add_to(st.session_state['map'])
        
-st.write("Polyline points:", polyline_coords)
 st_folium(st.session_state["map"], use_container_width=True, height=500, returned_objects=[])
