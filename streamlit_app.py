@@ -10,6 +10,22 @@ from streamlit_js_eval import get_geolocation
 # stremalit setup
 st.set_page_config(layout="wide")
 
+def addRoute(m, coords):
+    def getRoute(graphType, color, opacity=1.0):
+
+        graph = ox.graph_from_place('Mindanao State University General Santos, General Santos, Philippines', network_type=graphType, simplify=False)
+
+        originNode = ox.distance.nearest_nodes(graph, X=coords[0][1], Y=coords[0][0])
+        destNode = ox.distance.nearest_nodes(graph, X=coords[1][1], Y=coords[1][0])
+
+        route = ox.routing.shortest_path(graph, originNode, destNode, weight='length')
+        routeCoords = [(graph.nodes[node]['y'], graph.nodes[node]['x']) for node in route]
+
+        fm.PolyLine(locations=routeCoords, color=color, weight=5, opacity=opacity).add_to(m)
+        
+    getRoute(graphType='walk', color='maroon', opacity=0.5)
+    getRoute(graphType='drive_service', color='maroon')
+
 move_search_bar_up = """
     <style>
     div[data-baseweb="input"] {
@@ -83,9 +99,7 @@ if x:
 
       #main 
       st.session_state["map"] = utility.createMap(lat=local_lat, lng=local_lng)
-      utility.addRoute(st.session_state["map"], coords)
-
-      st.write(coords)
+      addRoute(st.session_state["map"], coords)
 
       fm.Marker(location=(local_lat, local_lng), icon=fm.Icon(color="blue")).add_to(st.session_state['map'])
       fm.Marker(location=(location_coords), icon=fm.Icon(color="red")).add_to(st.session_state['map'])
