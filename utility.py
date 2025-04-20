@@ -2,24 +2,24 @@ import folium as fm
 import osmnx as ox
 
 def findMatch(user_input, locations):
-    # check exact math in locations
+    #check exact math in locations
     for location, details in locations.items():
         if location.lower() == user_input.lower():
             return location
     
-    # check mathing aliases
+    #check mathing aliases
     for location, details in locations.items():
         for alias in details["aliases"]:
             if alias.lower() == user_input.lower():
                 return location
     
-    # check matching ofiecs
+    #check matching ofiecs
     for location, details in locations.items():
         for office in details["offices"]:
             if office.lower() == user_input.lower():
                 return location
     
-    # if no match, check prefix 
+    #if no match, check prefix 
     for location, details in locations.items():
         if location.lower().startswith(user_input.lower()):
             return location
@@ -59,7 +59,11 @@ def addRoute(m, coords):
         route = ox.routing.shortest_path(graph, originNode, destNode, weight='length')
         routeCoords = [(graph.nodes[node]['y'], graph.nodes[node]['x']) for node in route]
 
-        fm.PolyLine(locations=routeCoords, color=color, weight=5, opacity=opacity).add_to(m)
+        routeFG = fm.FeatureGroup(name='Polylines')
+
+        fm.PolyLine(locations=routeCoords, color=color, weight=5, opacity=opacity).add_to(routeFG)
+
+        routeFG.add_to(m)
 
     getRoute(graphType='walk', color='maroon', opacity=0.5)
     getRoute(graphType='drive_service', color='maroon')
