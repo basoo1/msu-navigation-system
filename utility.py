@@ -36,6 +36,9 @@ def addRoute(m, coords):
         routeCoords = [(graph.nodes[node]['y'], graph.nodes[node]['x']) for node in route]
 
         fm.PolyLine(locations=routeCoords, color=color, weight=5, opacity=opacity).add_to(m)
+        
+        import streamlit as st
+        st.write('skibiidi')
 
     getRoute(graphType='walk', color='maroon', opacity=0.5)
     getRoute(graphType='drive_service', color='maroon')
