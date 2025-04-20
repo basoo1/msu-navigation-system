@@ -1,7 +1,6 @@
 streamlit
 folium
 streamlit-folium
-osmnx
-networkx
+osmnx~=1.1.2
 scikit-learn
 streamlit_js_eval
