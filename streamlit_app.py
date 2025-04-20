@@ -3,7 +3,6 @@ import folium as fm
 import osmnx as ox
 import json
 import utility
-from folium.plugins import LocateControl as lc
 from streamlit_folium import st_folium
 from streamlit_js_eval import get_geolocation
 
@@ -11,14 +10,12 @@ from streamlit_js_eval import get_geolocation
 st.set_page_config(layout="wide")
 
 move_search_bar_up = """
-    <style>
-    div[data-baseweb="input"] {
-        margin-top: -4.5em;
-    }
-    </style>
-    """
-st.markdown(move_search_bar_up, unsafe_allow_html=True)
-
+   <style>
+   div[data-baseweb="input"] {
+      margin-top: -4.5em;
+   }
+   </style>
+   """
 hide_st_style = """
          <style>
          #MainMenu {visibility: hidden;}
@@ -36,26 +33,27 @@ custom_margin = """
          .element-container 
          </style>
          """
-removerandomelement = """
+remove_getLocation = """
          <style>
-         .stElementContainer.st-key-getLocation-- {
+        .stElementContainer.st-key-getLocation-- {
             display: none;
          }
          </style>
          """
 
+st.markdown(move_search_bar_up, unsafe_allow_html=True)
 st.markdown(custom_margin, unsafe_allow_html=True)
-st.markdown(removerandomelement, unsafe_allow_html=True)
+st.markdown(remove_getLocation, unsafe_allow_html=True)
 st.markdown(hide_st_style, unsafe_allow_html=True)
 
-# preload map
+#preload map
 if 'map' not in st.session_state:
     st.session_state['map'] = utility.createMap(lat=0, lng=0)
 
 x = st.text_input('')
 m = utility.createMap(lat=0, lng=0)
 
-#check locatations file
+#check locations file
 if x:
    with open("locations.json", "r") as file:
       locations = json.load(file)   
@@ -88,4 +86,4 @@ if x:
       fm.Marker(location=(local_lat, local_lng), icon=fm.Icon(color="blue")).add_to(st.session_state['map'])
       fm.Marker(location=(location_coords), icon=fm.Icon(color="red")).add_to(st.session_state['map'])
 
-st_folium(st.session_state["map"], use_container_width=True, height=500, returned_objects=[])
+st_folium(st.session_state["map"], use_container_width=True, height=500)
