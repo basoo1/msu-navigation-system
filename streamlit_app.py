@@ -85,7 +85,9 @@ if x:
       st.session_state["map"] = utility.createMap(lat=local_lat, lng=local_lng)
       utility.addRoute(st.session_state["map"], coords)
 
+      st.write(coords)
+
       fm.Marker(location=(local_lat, local_lng), icon=fm.Icon(color="blue")).add_to(st.session_state['map'])
       fm.Marker(location=(location_coords), icon=fm.Icon(color="red")).add_to(st.session_state['map'])
-       
+
 st_folium(st.session_state["map"], use_container_width=True, height=500, returned_objects=[])
