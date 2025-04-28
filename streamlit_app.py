@@ -137,6 +137,5 @@ if selected_option:
 
 st_folium(st.session_state["map"], 
           use_container_width=True, 
-          height=500,
           feature_group_to_add=markerFG,
           returned_objects=[])
