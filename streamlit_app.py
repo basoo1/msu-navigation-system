@@ -11,6 +11,8 @@ from streamlit_js_eval import get_geolocation
 st.set_page_config(layout="wide")
 markerFG = fm.FeatureGroup(name='Markers')
 
+st.container(height=None)
+
 move_search_bar_up = """
    <style>
    .stSelectbox {
