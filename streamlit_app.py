@@ -3,40 +3,12 @@ import folium as fm
 import osmnx as ox
 import json
 import utility
-import streamlit.components.v1 as components
 from streamlit_folium import st_folium
 from streamlit_js_eval import get_geolocation
 
-# streamlit setup
+#streamlit setup
 st.set_page_config(layout="wide")
 markerFG = fm.FeatureGroup(name='Markers')
-
-st.container(height=None)
-
-move_search_bar_up = """
-   <style>
-   .stSelectbox {
-   margin-top: -4.5em;
-   }
-   <style>
-"""
-
-move_sidebar_collapse_button = """
-   <style>
-   [data-testid="stSidebarCollapsedControl"] {
-      margin-top: 19rem;
-      margin-left: -1.5rem;
-   }
-   </style>
-"""
-
-move_sidecontrol = """
-   <style>
-   stBaseButton-headerNoPadding {
-   margin-bottom: -4.5em;
-   }
-   <style>
-"""
 
 hide_st_style = """
    <style>
@@ -45,17 +17,48 @@ hide_st_style = """
    header {visibility: hidden;}
    </style>
    """
+
 custom_margin = """
    <style>
-   .block-container 
-   {padding-top: 0rem;
-   padding-bottom: 0em;
-   padding-left: .5rem;
-   padding-right: .5rem;}
-   .element-container 
+   .block-container {
+      padding-top: 0rem;
+      padding-bottom: 0em;
+      padding-left: 0rem;
+      padding-right: 0rem;}
+   }
    </style>
    """
-remove_getLocation = """
+c_SearchBox = """
+   <style>
+   [data-testid="stSelectbox"] {
+      margin-top: -4.5rem;
+      padding-left: .5rem;
+      padding-right: .5rem;
+      z-index: 999;
+   }
+
+   /* downSymbol */
+   .st-ck {
+      fill: #800000;
+   }
+
+   /* Title Size */
+   [data-testid="stMarkdownContainer"] {
+      font-size: 1.2rem;
+   }
+
+   /* Title */
+   p, ol, ul, dl {
+      margin: 0px 0px 1rem;
+      padding: 0px;
+      font-size: 1rem;
+      font-weight: 800;
+      color: #800000
+   }
+   <style>
+"""
+
+c_Map = """
    <style>
    .stElementContainer.st-key-getLocation-- {
       display: none;
@@ -63,11 +66,44 @@ remove_getLocation = """
    </style>
    """
 
-st.markdown(move_search_bar_up, unsafe_allow_html=True)
+c_sideBar = """
+   <style>
+   [data-testid="stSidebarCollapsedControl"] {
+      margin-top: 19rem;
+      margin-left: -2rem;
+   }
+   [data-testid="stBaseButton-headerNoPadding"] {
+      background-color: rgb(255 255 255);
+      color: #800000;
+   }
+   [data-testid="stSidebar"] {
+      background-color: #ffffff
+   }
+
+   /*Building Text*/
+   .st-emotion-cache-102y9h7 h2 {
+    font-size: 1.5rem;
+    padding-right: 0rem;
+    margin-top: -2.2rem;
+   }
+
+   /*Offices Text*/
+   .st-emotion-cache-102y9h7 h3 {
+      font-size: 1.3rem;
+      margin-top: -1.6em;
+   }
+
+   .st-emotion-cache-a6qe2i {
+    padding: 0rem 1.5rem 6rem;
+   }
+   <style>
+"""
+
+st.markdown(c_SearchBox, unsafe_allow_html=True)
 st.markdown(custom_margin, unsafe_allow_html=True)
-st.markdown(remove_getLocation, unsafe_allow_html=True)
 st.markdown(hide_st_style, unsafe_allow_html=True)
-st.markdown(move_sidebar_collapse_button, unsafe_allow_html=True)
+st.markdown(c_Map, unsafe_allow_html=True)
+st.markdown(c_sideBar, unsafe_allow_html=True)
 
 with open("locations.json", "r") as file:
    locations = json.load(file)   
@@ -85,8 +121,7 @@ for location, details in locations.items():
 if 'map' not in st.session_state:
    st.session_state['map'] = utility.createMap(lat=0, lng=0)
 
-
-selected_option = st.selectbox('Search', search_options)
+selected_option = st.selectbox('MAPA ISKO', search_options, index=None, placeholder="Search")
 
 #create sidebar
 sidebar = st.sidebar
@@ -120,24 +155,29 @@ if selected_option:
       if geolocation:
          local_lat = geolocation['coords']['latitude'] 
          local_lng = geolocation['coords']['longitude']
-
+          
          coords = [(local_lat, local_lng), (location_coords)]
 
          #main 
          st.session_state["map"] = utility.createMap(lat=local_lat, lng=local_lng)
          utility.addRoute(st.session_state["map"], coords)
-
+         
          fm.Marker(location=(local_lat, local_lng), 
-                  icon=fm.Icon(color="blue")
+                  icon=fm.Icon(color="blue"),
+                  popup="Your Location"
                   ).add_to(markerFG)
-            
+
          fm.Marker(location=(location_coords), 
                   icon=fm.Icon(color="red"),
                   popup=selected_option
                   ).add_to(markerFG)
+         
          markerFG.add_to(st.session_state['map'])
 
+
 st_folium(st.session_state["map"], 
-          use_container_width=True, 
-          feature_group_to_add=markerFG,
-          returned_objects=[])
+   use_container_width=True, 
+   height=500,
+   feature_group_to_add=markerFG,
+   returned_objects=[])
+
