@@ -1,6 +1,5 @@
 import folium as fm
 import osmnx as ox
-import base64
 import streamlit as st
 
 def findMatch(user_input, locations):
@@ -70,43 +69,3 @@ def addRoute(m, coords):
 
     getRoute(graphType='walk', color='maroon', opacity=0.5)
     getRoute(graphType='drive_service', color='maroon')
-
-
-# Set background
-def get_img_b64(file):
-   with open(file, "rb") as f:
-      data = f.read()
-   return base64.b64encode(data).decode()
-
-def set_bg(image_path):
-    base64_image = get_img_b64(image_path)
-    st.markdown(
-        f"""
-        <style>
-        .stApp {{
-            background-image: url("data:image/jpeg;base64,{base64_image}");
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background position: center;
-        }}
-        </style>
-        """,
-        unsafe_allow_html=True
-    )
-
-def set_sidebar_button(image_path):
-    base64_image = get_img_b64(image_path)
-    st.markdown(
-    f"""
-    <style>
-    [data-testid="stSidebarCollapsedControl"] {{
-        background-image: url("data:image/png;base64,{base64_image}");
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-color: transparent;
-    }}
-    .stBaseButton-headerNoPadding
-    </style>
-""", unsafe_allow_html=True)
