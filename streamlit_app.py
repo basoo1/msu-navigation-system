@@ -174,7 +174,6 @@ if selected_option:
          
          markerFG.add_to(st.session_state['map'])
 
-
 st_folium(st.session_state["map"], 
    use_container_width=True, 
    height=500,
