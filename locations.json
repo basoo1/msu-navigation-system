@@ -12,7 +12,7 @@
     },
 
     "Administration Building": {
-        "offices": ["Registrar's Office", "Office of the Chancellor", "Admissions Office"],
+        "offices": ["1F Registrar's Office", "2F Office of the Chancellor", "2F Admissions Office"],
         "aliases": ["Y Building"],
         "coordinates": [6.065375, 125.128363]
     },
@@ -275,7 +275,7 @@
         "coordinates": [6.064412, 125.128306]
     },
     "University Library": {
-        "offices": ["Senior High School Faculty"],
+        "offices": ["1F Senior High School Faculty", "1F Museum", "1F Library AVR", "1F Digital Library", "1F Cultural Affairs Department", "2F University Library"],
         "aliases": [],
         "coordinates": [6.066663, 125.127996]
     },
