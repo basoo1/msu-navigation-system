@@ -138,9 +138,6 @@ for location, details in locations.items():
 
 selected_option = st.selectbox('MAPA ISKO', search_options, index=None, placeholder="Search")
 
-#create sidebar
-sidebar = st.sidebar
-
 if selected_option:
    location_info = search_map.get(selected_option)
    
@@ -151,6 +148,7 @@ if selected_option:
       location_coords = location_details["coordinates"]
       
       #display
+      sidebar = st.sidebar
       sidebar.header(result)
       if location_details["offices"]:
           sidebar.subheader("Offices:")
