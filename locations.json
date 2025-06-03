@@ -31,7 +31,7 @@
 
     "Soccer Field": {
         "offices": [],
-        "aliases": ["Football Field"],
+        "aliases": [],
         "coordinates": [6.066817, 125.125169]
     },
 
@@ -43,13 +43,13 @@
 
     "University Police Office": {
         "offices": [],
-        "aliases": ["Police Office", "Police"],
+        "aliases": [],
         "coordinates": [6.065783, 125.127438]
     },
 
     "Office of Student Affairs and Services": {
         "offices": [],
-        "aliases": ["OSA", "OSA Building"],
+        "aliases": [],
         "coordinates": [6.069714, 125.124106]
     },
 
@@ -85,13 +85,13 @@
 
     "Boy's Dormitory": {
         "offices": [],
-        "aliases": ["Boy's Dorm", "Boys Dorm"],
+        "aliases": [],
         "coordinates": [6.070680, 125.124080]
     },
 
     "Girl's's Dormitory": {
         "offices": [],
-        "aliases": ["Girl's Dorm", "Girls Dorm"],
+        "aliases": [],
         "coordinates": [6.068765, 125.124224]
     },
 
@@ -109,13 +109,13 @@
 
     "Senior High School": {
         "offices": [],
-        "aliases": ["SHS", "Siklab"],
+        "aliases": ["Siklab"],
         "coordinates": [6.068547, 125.128217]
     },
 
     "College of Social Sciences and Humanities": {
-        "offices": [],
-        "aliases": ["CSSH"],
+        "offices": ["Darangen", "History Department", "AS Mini Theater", "Sociology Department", "Psychology Department", "English Department", "Filipino Department", "Political Science Department", "CSSH Dean's Office"],
+        "aliases": [],
         "coordinates": [6.067690, 125.125997]
     },
 
@@ -133,46 +133,46 @@
 
     "New CSSH Building": {
         "offices": [],
-        "aliases": ["New CSSH"],
+        "aliases": [],
         "coordinates": [6.067772, 125.125037]
     },
 
     "College of Natural Sciences and Mathematics": {
-        "offices": [],
-        "aliases": ["CNSM", "Natural Sciences", "Mathematics"],
+        "offices": ["CNSM Dean's Office", "Nutraceutical Laboratory"],
+        "aliases": [],
         "coordinates": [6.069362, 125.125818]
     },
 
     "Regional Science Research Center": {
         "offices": [],
-        "aliases": ["RSRC"],
+        "aliases": [],
         "coordinates": [6.069701, 125.125826]
     },
 
     "Physics Building (CNSM)": {
         "offices": [],
-        "aliases": ["Physics"],
+        "aliases": [],
         "coordinates": [6.069362, 125.125818]
         
     },
 
     "Science Laboratory (CNSM)": {
         "offices": [],
-        "aliases": ["Science"],
+        "aliases": [],
         "coordinates": [6.068967, 125.125869]
         
     },
 
     "I.T Building (CNSM)": {
         "offices": [],
-        "aliases": ["IT"],
+        "aliases": [],
         "coordinates": [6.069093, 125.126764]
         
     },
 
-    "Math Building (CNSM)": {
+    "Mathematics Building (CNSM)": {
         "offices": [],
-        "aliases": ["Mathematics"],
+        "aliases": [],
         "coordinates": [6.069477, 125.126896]
         
     },
@@ -193,19 +193,19 @@
 
     "Supreme Student Council Building": {
         "offices": [],
-        "aliases": ["SSC"],
+        "aliases": [],
         "coordinates": [6.068921, 125.124892]
     },
 
     "College of Fisheries": {
-        "offices": [],
+        "offices": ["Fisheries AVR", "Fisheries Laboratory", " Fisheries Faculty"],
         "aliases": ["COF", "Fisheries"],
         "coordinates": [6.064369, 125.130034]
     },
 
     "College of Engineering": {
-        "offices": [],
-        "aliases": ["COE", "Engineering", "H Building"],
+        "offices": ["Mechanical Engineering Laboratory", "Civil Engineering Laboratory", "Hydraulics Lab", "Electrical Automation Lab", "Electrical and Electronics Laboratory", "Engineering Faculty Lounge", "Icebox", "Civil Engineering Dean's Office", "Mechanical Engineering Dean's Office"],
+        "aliases": ["H Building"],
         "coordinates": [6.064182, 125.126845]
     },
 
@@ -223,31 +223,31 @@
 
     "Jeepney Terminal": {
         "offices": [],
-        "aliases": ["Terminal"],
+        "aliases": [],
         "coordinates": [6.067316, 125.127215]
     },
 
     "Physical Plant Division": {
         "offices": [],
-        "aliases": ["PPD"],
+        "aliases": [],
         "coordinates": [6.069567, 125.123272]
     },
 
     "College of Agriculture": {
         "offices": [],
-        "aliases": ["COA", "Agriculture"],
+        "aliases": [],
         "coordinates": [6.070333, 125.125774]
     },
 
     "Science and Technology Training Center": {
         "offices": [],
-        "aliases": ["STTC"],
+        "aliases": [],
         "coordinates": [6.070786, 125.126756]
     },
 
     "Sigay Center": {
         "offices": [],
-        "aliases": ["COA", "Agriculture"],
+        "aliases": [],
         "coordinates": [6.070423, 125.124774]
     },
 
@@ -259,19 +259,19 @@
 
     "College of Education": {
         "offices": [],
-        "aliases": ["COEd", "Education"],
+        "aliases": [],
         "coordinates": [6.067772, 125.128274]
     },
 
     "College of Education Dormitory": {
         "offices": [],
-        "aliases": ["COEd Dorm"],
+        "aliases": [],
         "coordinates": [6.070868, 125.127456]
     },
 
     "Business Administration and Accountancy": {
-        "offices": [],
-        "aliases": ["BA"],
+        "offices": ["Accountancy Faculty", "Economics Faculty", "BAA 'Dean's Office"],
+        "aliases": [],
         "coordinates": [6.064412, 125.128306]
     },
     "University Library": {
