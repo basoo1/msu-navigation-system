@@ -90,7 +90,7 @@ c_sideBar = """
    /*Offices Text*/
    .st-emotion-cache-102y9h7 h3 {
       font-size: 1.3rem;
-      margin-top: -1.6em;
+      margin-top: -1rem;
    }
 
    .st-emotion-cache-a6qe2i {
@@ -108,6 +108,10 @@ st.markdown(c_sideBar, unsafe_allow_html=True)
 with open("locations.json", "r") as file:
    locations = json.load(file)   
 
+#preload map
+if 'map' not in st.session_state:
+   st.session_state['map'] = utility.createMap(lat=0, lng=0)
+
 #create search options table
 search_options = []
 search_map = {}
@@ -117,9 +121,20 @@ for location, details in locations.items():
    search_options.append(location)
    search_map[location] = {"location": location, "office": None}
 
-#preload map
-if 'map' not in st.session_state:
-   st.session_state['map'] = utility.createMap(lat=0, lng=0)
+#add aliases to search options and search map
+for location, details in locations.items():
+   for alias in details["aliases"]:
+      alias_display = f"{alias} ({location})"
+      search_options.append(alias_display)
+      search_map[alias] = {"location": location, "office": None}
+
+#add offices to both search options and search map
+for location, details in locations.items():
+   for office in details["offices"]:
+      office_clean = office.replace("1F ", "").replace("2F ", "").replace("3F ", "").replace("4F ", "").replace("5F ", "")
+      office_display = f"{office_clean} ({location})"
+      search_options.append(f"{office_clean} ({location})")
+      search_map[office_display] = {"location": location, "office": None}
 
 selected_option = st.selectbox('MAPA ISKO', search_options, index=None, placeholder="Search")
 
@@ -179,4 +194,3 @@ st_folium(st.session_state["map"],
    height=500,
    feature_group_to_add=markerFG,
    returned_objects=[])
-
